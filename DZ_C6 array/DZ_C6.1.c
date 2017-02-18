@@ -1,4 +1,4 @@
-﻿/*
+/*
 Задание 1
 Написать программу, которая вводит с клавиатуры массив из 10 целых чисел,
 после чего выводит количество ненулевых элементов.
@@ -9,24 +9,24 @@
 
 #define ARRAY_SIZE 10                       //Колличество элементов в массиве
 
-void getArray(int array[], char lengthArray);
-char countNonZeroElenentsInArray(int array[], char lengthArray);
-int getIntNumber(void);
+void getArray(int array[], char arrayLength);
+char countNonZeroElenents(int array[], char arrayLength);
+int getIntNumber();
 
 int main()
 {
-    printf("Pleace entering the %i integer numbers.\n\n", ARRAY_SIZE);
+    printf("Please enter %i integer numbers.\n\n", ARRAY_SIZE);
 
-    int arrayIntNumbers[ARRAY_SIZE];        //Целочисленный массив
-    getArray(arrayIntNumbers, ARRAY_SIZE);  //получить массив
+    int intNumbers[ARRAY_SIZE];        //Целочисленный массив
+    getArray(intNumbers, ARRAY_SIZE);  //получить массив
 
-    printf("\nYou entering the %i non-zero numbers.\n", countNonZeroElenentsInArray(arrayIntNumbers, ARRAY_SIZE));
+    printf("\nYou entering the %i non-zero numbers.\n", countNonZeroElenents(intNumbers, ARRAY_SIZE));
 }
 
 /*Получение массива чисел от пользователя*/
-void getArray(int array[], char lengthArray)
+void getArray(int array[], char arrayLength)
 {
-    for(char i = 0; i < lengthArray; i++)
+    for(char i = 0; i < arrayLength; i++)
     {
         printf("%2i : ", i + 1);
         array[i] = getIntNumber();
@@ -34,21 +34,21 @@ void getArray(int array[], char lengthArray)
 }
 
 /*Подсчет колличества ненулевых элементов массива*/
-char countNonZeroElenentsInArray(int array[], char lengthArray)
+char countNonZeroElenentsInArray(int array[], char arrayLength)
 {
-    char countNonZero = 0;                  //Счетчик ненулевых элементов
-    for(char i = 0; i < lengthArray; i++)
+    char nonZeroCount = 0;                  //Счетчик ненулевых элементов
+    for(char i = 0; i < arrayLength; i++)
     {
         if(array[i] != 0)
         {
-            countNonZero++;
+            nonZeroCount++;
         }
     }
-    return countNonZero;
+    return nonZeroCount;
 }
 
 /*Получение от пользователя одного целого числа*/
-int getIntNumber(void)
+int getIntNumber()
 {
     float enteringNumber;                   //Введенное пользователем число
     while((scanf("%f", &enteringNumber) != 1) || (enteringNumber != (int)enteringNumber))
