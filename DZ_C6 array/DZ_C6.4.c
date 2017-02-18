@@ -12,7 +12,7 @@
 #define ARRAY_SIZE 10                       //Колличество строк массиве
 
 void getArray(int array[], char lengthArray);
-int getIntNumber(void);
+int getIntNumber();
 bool isDecreasingArray(int array[], char lengthArray);
 void changeNegativeElementsToZero(int array[], char lengthArray);
 void printArray(int array[], char lengthArray);
@@ -33,15 +33,15 @@ int main()
     getArray(therdArray, ARRAY_SIZE);
 
     /*Замена отрицательных элементов убывающих массивов нулями*/
-    if(isDecreasingArray(firstArray, ARRAY_SIZE))
+    if (isDecreasingArray(firstArray, ARRAY_SIZE))
     {
         changeNegativeElementsToZero(firstArray, ARRAY_SIZE);
     }
-    if(isDecreasingArray(secondArray, ARRAY_SIZE))
+    if (isDecreasingArray(secondArray, ARRAY_SIZE))
     {
         changeNegativeElementsToZero(secondArray, ARRAY_SIZE);
     }
-    if(isDecreasingArray(therdArray, ARRAY_SIZE))
+    if (isDecreasingArray(therdArray, ARRAY_SIZE))
     {
         changeNegativeElementsToZero(therdArray, ARRAY_SIZE);
     }
@@ -58,7 +58,7 @@ int main()
 /*Получение массива целых чисел от пользователя*/
 void getArray(int array[], char lengthArray)
 {
-    for(int i = 0; i < lengthArray; i++)
+    for (int i = 0; i < lengthArray; i++)
     {
         printf("%2i : ", i + 1);
         array[i] = getIntNumber();
@@ -70,7 +70,7 @@ void getArray(int array[], char lengthArray)
 int getIntNumber(void)
 {
     float enteringNumber;                   //Введенное пользователем число
-    while((scanf("%f", &enteringNumber) != 1) || (enteringNumber != (int)enteringNumber))
+    while ((scanf("%f", &enteringNumber) != 1) || (enteringNumber != (int)enteringNumber))
     {
         printf("Incorrect number. Pleasee try again.\n");
         while(getchar() != '\n') {}         //очистка потока ввода
@@ -81,9 +81,9 @@ int getIntNumber(void)
 /*Убывающий ли массив?*/
 bool isDecreasingArray(int array[], char lengthArray)
 {
-    for(char i = 1; i < lengthArray; i++)
+    for (char i = 1; i < lengthArray; i++)
     {
-        if(array[i] > array[i - 1])
+        if (array[i] > array[i - 1])
         {
             return false;
         }
@@ -94,9 +94,9 @@ bool isDecreasingArray(int array[], char lengthArray)
 /*Замена отрицательных элементов массива нулями*/
 void changeNegativeElementsToZero(int array[], char lengthArray)
 {
-    for(char i = 0; i < lengthArray; i++)
+    for (char i = 0; i < lengthArray; i++)
     {
-        if(array[i] < 0)
+        if (array[i] < 0)
         {
             array[i] = 0;
         }
@@ -106,7 +106,7 @@ void changeNegativeElementsToZero(int array[], char lengthArray)
 /*Вывод массива на консоль*/
 void printArray(int array[], char lengthArray)
 {
-    for(char i = 0; i < lengthArray; i++)
+    for (char i = 0; i < lengthArray; i++)
     {
         printf("%-5i ", array[i]);
     }
