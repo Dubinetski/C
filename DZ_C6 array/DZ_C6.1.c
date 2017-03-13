@@ -1,4 +1,4 @@
-/*
+﻿/*
 Задание 1
 Написать программу, которая вводит с клавиатуры массив из 10 целых чисел,
 после чего выводит количество ненулевых элементов.
@@ -10,7 +10,7 @@
 #define ARRAY_SIZE 10                       //Колличество элементов в массиве
 
 void getArray(int array[], char arrayLength);
-char countNonZeroElenents(int array[], char arrayLength);
+char countNonZeroElenentsInArray(int array[], char arrayLength);
 int getIntNumber();
 
 int main()
@@ -20,7 +20,7 @@ int main()
     int intNumbers[ARRAY_SIZE];        //Целочисленный массив
     getArray(intNumbers, ARRAY_SIZE);  //получить массив
 
-    printf("\nYou entering the %i non-zero numbers.\n", countNonZeroElenents(intNumbers, ARRAY_SIZE));
+    printf("\nYou entering the %i non-zero numbers.\n", countNonZeroElenentsInArray(intNumbers, ARRAY_SIZE));
 }
 
 /*Получение массива чисел от пользователя*/

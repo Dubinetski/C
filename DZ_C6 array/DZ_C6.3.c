@@ -1,4 +1,4 @@
-/*
+﻿/*
 Задание 3
 Даны два одномерных массива А и В одинаковой размерности. Получить третий массив Р
 такой же размерности, каждый элемент которого равен сумме соответствующих
@@ -27,7 +27,7 @@ int main()
     printArray(firstArray, ARRAY_SIZE);
 
     int secondArray[ARRAY_SIZE];            //второй массив
-    getRandomArray(secondArray, ARRAY_SIZE);
+	fillRandomArray(secondArray, ARRAY_SIZE);
     printf("\nSecond array: \n");
     printArray(secondArray, ARRAY_SIZE);
 

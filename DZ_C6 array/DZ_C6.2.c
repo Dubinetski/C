@@ -1,4 +1,4 @@
-/*
+﻿/*
 Задание 2
 Найти сумму положительных элементов двумерного массива.
 */
@@ -11,26 +11,25 @@
 #define ARRAY_COLUMN_COUNT 10                            //Длина строк массива
 #define MAX_NUMBER 100                              //Максимально возможный элемент массива
 
-void fillRandomArray(int array[ARRAY_ROW][ARRAY_COLLUMN], char rowCount, char columnCount);
-void printArray(int array[ARRAY_ROW][ARRAY_COLLUMN], char rowCount, char columnCount);
-int summPositiveElenentsOfArray(int array[ARRAY_ROW][ARRAY_COLLUMN], char rowCount, char columnCount);
-int getSignedRandNumber();
+void fillRandomArray(int array[ARRAY_ROW_COUNT][ARRAY_COLUMN_COUNT], char rowCount, char columnCount);
+void printArray(int array[ARRAY_ROW_COUNT][ARRAY_COLUMN_COUNT], char rowCount, char columnCount);
+int summPositiveElenentsOfArray(int array[ARRAY_ROW_COUNT][ARRAY_COLUMN_COUNT], char rowCount, char columnCount);
 
 int main()
 {
-    int arrayIntNumbers[ARRAY_ROW][ARRAY_COLLUMN];  //целочисленный массив
+    int arrayIntNumbers[ARRAY_ROW_COUNT][ARRAY_COLUMN_COUNT];  //целочисленный массив
     srand(time(0) * 1000);                          //х1000 для более быстрого обновления стартового значения
     
-    fillRandomArray(arrayIntNumbers, ARRAY_ROW, ARRAY_COLLUMN);
+    fillRandomArray(arrayIntNumbers, ARRAY_ROW_COUNT, ARRAY_COLUMN_COUNT);
 
-    printf("Random array %ix%i:\n", ARRAY_ROW, ARRAY_COLLUMN);
-    printArray(arrayIntNumbers, ARRAY_ROW, ARRAY_COLLUMN);
+    printf("Random array %ix%i:\n", ARRAY_ROW_COUNT, ARRAY_COLUMN_COUNT);
+    printArray(arrayIntNumbers, ARRAY_ROW_COUNT, ARRAY_COLUMN_COUNT);
 
-    printf("\nSumm posiive elements of array: %i.\n\n", summPositiveElenentsOfArray(arrayIntNumbers, ARRAY_ROW, ARRAY_COLLUMN));
+    printf("\nSumm posiive elements of array: %i.\n\n", summPositiveElenentsOfArray(arrayIntNumbers, ARRAY_ROW_COUNT, ARRAY_COLUMN_COUNT));
 }
 
 /*Заполнение массива случайными числами*/
-void fillRandomArray(int array[ARRAY_ROW][ARRAY_COLLUMN], char rowCount, char collumnCount)
+void fillRandomArray(int array[ARRAY_ROW_COUNT][ARRAY_COLUMN_COUNT], char rowCount, char collumnCount)
 {
     for(char row = 0; row < rowCount; row++)
     {
@@ -42,7 +41,7 @@ void fillRandomArray(int array[ARRAY_ROW][ARRAY_COLLUMN], char rowCount, char co
 }
 
 /*Подсчет колличества ненулевых элементов массива*/
-int summPositiveElenentsOfArray(int array[ARRAY_ROW][ARRAY_COLLUMN], char rowCount, char collumnCount)
+int summPositiveElenentsOfArray(int array[ARRAY_ROW_COUNT][ARRAY_COLUMN_COUNT], char rowCount, char collumnCount)
 {
     int summPositiveElenents = 0;                   //Сумма положительных элементов массива
     for(char row = 0; row < rowCount; row++)
@@ -59,7 +58,7 @@ int summPositiveElenentsOfArray(int array[ARRAY_ROW][ARRAY_COLLUMN], char rowCou
 }
 
 /*Вывод массива на консоль*/
-void printArray(int array[ARRAY_ROW][ARRAY_COLLUMN], char rowCount, char collumnCount)
+void printArray(int array[ARRAY_ROW_COUNT][ARRAY_COLUMN_COUNT], char rowCount, char collumnCount)
 {
     for(char row = 0; row < rowCount; row++)
     {
