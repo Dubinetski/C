@@ -24,8 +24,7 @@ int main()
     printf("Rezult string:\n%s\n\n", enteringString);
 }
 
-/*Удаляет из строки все вхождения заданного символа.
-Возвращает колличество удаленных сиволов.*/
+/*Удаляет из строки все вхождения заданного символа.*/
 void delateSymbolInString(char* string, char delatedSymbol)
 {
     int countOfDeletedSymbol = 0;                //счетчик удаляемых символов в строке
